@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="personalities-section">
+    <div class="container">
+        <h2 class="section-title">Выдающиеся личности Саратова в годы ВОВ</h2>
+        <p class="section-subtitle">Герои, чей вклад в Победу невозможно переоценить</p>
+        
+        <div class="personalities-grid">
+            <!-- Карточка 1 -->
+            <div class="person-card">
+                <div class="person-photo" style="background-image: url('https://example.com/panfilov.jpg');">
+                    <div class="photo-overlay"></div>
+                </div>
+                <div class="person-info">
+                    <h3 class="person-name">Иван Панфилов</h3>
+                    <p class="person-rank">Генерал-майор, Герой Советского Союза</p>
+                    <div class="person-divider"></div>
+                    <p class="person-bio">
+                        Уроженец Петровского уезда Саратовской губернии. 
+                        Командовал 316-й стрелковой дивизией, прославившейся 
+                        в битве за Москву. Погиб в ноябре 1941 года.
+                    </p>
+                    <a href="#" class="person-link">Подробнее →</a>
+                </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="person-card">
+                <div class="person-photo" style="background-image: url('https://example.com/chuykov.jpg');">
+                    <div class="photo-overlay"></div>
+                </div>
+                <div class="person-info">
+                    <h3 class="person-name">Василий Чуйков</h3>
+                    <p class="person-rank">Маршал Советского Союза</p>
+                    <div class="person-divider"></div>
+                    <p class="person-bio">
+                        Командующий 62-й армией, защищавшей Сталинград. 
+                        Разработал тактику ближнего боя в городских условиях. 
+                        После войны жил и работал в Саратове.
+                    </p>
+                    <a href="#" class="person-link">Подробнее →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
