@@ -1,0 +1,909 @@
+:root {
+    /* Цветовая палитра */
+    --primary-bg: #f8f5f2;
+    --secondary-bg: #eeeae6;
+    --card-bg: #ffffff;
+    --accent-color: #a9927d;
+    --accent-light: #c0ae9e;
+    --accent-dark: #8a7866;
+    --text-dark: #333333;
+    --text-medium: #5c5c5c;
+    --text-light: #777777;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --radius: 8px;
+}
+
+/* Базовые стили */
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--primary-bg);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    padding-top: 60px; /* Для фиксированной навигации */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Фиксированная навигация */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    z-index: 999;
+    padding: 10px 0;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 5px;
+}
+
+.nav-link {
+    display: block;
+    padding: 8px 16px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: var(--secondary-bg);
+}
+
+.nav-link.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Основное содержимое */
+.main {
+    margin-top: 60px; /* Отступ для фиксированной навигации */
+    padding: 20px 0;
+}
+/* Герой-секция */
+.hero {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    color: var(--accent-dark);
+    margin-bottom: 20px;
+}
+
+.hero-divider {
+    width: 100px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 20px auto;
+}
+
+.hero-text {
+    font-size: 1.2rem;
+    max-width: 800px;
+    color: var(--text-medium);
+    margin: 0 auto 30px;
+    line-height: 1.7;
+}
+
+.hero-button {
+    background: var(--accent-color);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.hero-button:hover {
+    background: var(--accent-dark);
+    transform: translateY(-3px);
+}
+
+/* Карточки */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.feature-title {
+    color: var(--accent-dark);
+    margin-bottom: 15px;
+}
+
+.feature-text {
+    color: var(--text-medium);
+    line-height: 1.7;
+}
+
+/* Футер */
+.footer {
+    background-color: var(--secondary-bg);
+    padding: 30px 0;
+    margin-top: 60px;
+    border-top: 1px solid var(--accent-light);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-link {
+    color: var(--accent-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--accent-color);
+}
+
+.copyright {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    body {
+        padding-top: 120px;
+    }
+
+    .header-title {
+        font-size: 1.1rem;
+    }
+
+    .main-nav {
+        top: 60px;
+        padding: 8px 0;
+    }
+
+    .main {
+        margin-top: 120px;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        padding: 40px 0;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Раздел личностей */
+.personalities-section {
+    padding: 80px 0;
+    background-color: var(--primary-bg);
+}
+
+.section-title {
+    text-align: center;
+    color: var(--accent-dark);
+    font-size: 2.5rem;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+    font-weight: bold;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-medium);
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.personalities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.person-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.person-card:hover {
+    transform: translateY(-10px);
+}
+
+.person-photo {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.photo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+.person-info {
+    padding: 25px;
+}
+
+.person-name {
+    font-size: 1.8rem;
+    color: var(--accent-dark);
+    margin-bottom: 5px;
+}
+
+.person-rank {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.person-divider {
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-color);
+    margin: 20px 0;
+}
+
+.person-bio {
+    color: var(--text-medium);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.person-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.person-link:hover {
+    color: var(--accent-dark);
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .personalities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .person-photo {
+        height: 200px;
+    }
+}
+
+/* Раздел городов-героев */
+.hero-cities-section {
+    padding: 60px 0;
+    background-color: var(--primary-bg);
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: var(--accent-dark);
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-medium);
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.city-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+    transition: transform 0.3s ease;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.city-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.city-header {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 25px;
+    position: relative;
+}
+
+.city-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+}
+
+.city-name {
+    color: white;
+    font-size: 2.2rem;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 2;
+    font-weight: 600;
+}
+
+.city-badge {
+    background: var(--accent-color);
+    color: white;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 15px;
+    align-self: flex-start;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.city-content {
+    padding: 30px;
+}
+
+.connection-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    color: var(--accent-dark);
+}
+
+.connection-icon {
+    font-size: 1.8rem;
+    margin-right: 12px;
+}
+
+.connection-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.city-stats {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    color: var(--accent-dark);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: var(--text-medium);
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.city-description {
+    color: var(--text-medium);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .city-header {
+        height: 200px;
+        padding: 20px;
+    }
+
+    .city-name {
+        font-size: 1.8rem;
+    }
+
+    .city-content {
+        padding: 25px;
+    }
+
+    .city-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .city-header {
+        height: 200px;
+    }
+
+    .city-name {
+        font-size: 1.6rem;
+    }
+
+    .city-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .stat-item {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        min-width: auto;
+    }
+
+    .stat-number {
+        font-size: 1.6rem;
+        min-width: 80px;
+    }
+
+    .stat-label {
+        margin-top: 0;
+    }
+}
+
+/* Раздел битв */
+.battles-section {
+    padding: 80px 0;
+    background-color: var(--primary-bg);
+}
+
+.battles-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.battle-item {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    padding: 35px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.battle-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.battle-year {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: var(--accent-color);
+    color: white;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.battle-name {
+    color: var(--accent-dark);
+    font-size: 2rem;
+    margin: 0 120px 20px 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.battle-content p {
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.battle-facts {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.battle-facts li {
+    padding: 10px 0;
+    position: relative;
+    padding-left: 30px;
+    color: var(--text-medium);
+    line-height: 1.7;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.battle-facts li:last-child {
+    border-bottom: none;
+}
+
+.battle-facts li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-color);
+    border-radius: 50%;
+}
+
+.battle-facts strong {
+    color: var(--accent-dark);
+    font-weight: 600;
+}
+
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .battle-item {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .battles-section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .battle-name {
+        font-size: 1.8rem;
+        margin-right: 100px;
+    }
+
+    .battle-year {
+        top: 20px;
+        right: 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .battle-name {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .battle-year {
+        position: static;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+    .battle-content p {
+        font-size: 1rem;
+    }
+
+    .battle-facts li {
+        padding-left: 25px;
+    }
+}
+
+/* Стили для страниц футера */
+.content-section {
+    padding: 60px 0;
+}
+
+.content-section h2 {
+    color: var(--accent-dark);
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-info,
+.about-content,
+.projects-list {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info li {
+    padding: 10px 0;
+    color: var(--text-medium);
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.contact-info li:last-child {
+    border-bottom: none;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+    color: var(--text-medium);
+}
+
+.projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project {
+    background: var(--secondary-bg);
+    padding: 20px;
+    border-radius: var(--radius);
+}
+
+.project h3 {
+    color: var(--accent-dark);
+    margin-top: 0;
+}
+
+.project p {
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+/* Адаптивность для страниц футера */
+@media (max-width: 768px) {
+    .content-section {
+        padding: 40px 0;
+    }
+
+    .projects-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+.grid {
+    display: grid;
+    align-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Стили для карточек */
+.card,
+.person-card,
+.story {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.card:hover,
+.person-card:hover,
+.story:hover {
+    transform: translateY(-10px);
+}
+
+.card h3,
+.person-card h3,
+.story h3 {
+    color: var(--accent-dark);
+    margin-top: 0;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.card p,
+.person-card p,
+.story p {
+    color: var(--text-medium);
+    line-height: 1.7;
+}
+
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    color: var(--accent-dark);
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--accent-light);
+    margin-bottom: 40px;
+}
+
+/* Стили для списка историй */
+.story-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.story {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.story:last-child {
+    margin-bottom: 0;
+}
+
+.story:hover {
+    transform: translateY(-5px);
+}
+
+.story-content {
+    padding: 30px;
+}
+
+.story-title {
+    color: var(--accent-dark);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.story-text {
+    color: var(--text-medium);
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .grid,
+    .story-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .content-section {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .story {
+        margin-bottom: 30px;
+    }
+}
